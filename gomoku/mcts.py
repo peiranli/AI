@@ -555,7 +555,7 @@ class MCTS:
     def best_child(self, state, c):
         rewards = []
         for child in state.children:
-            reward = float(child.reward[0])/float(child.reward[1]) + c*sqrt( 2*log(len(state.reward[1]))/float(child.reward[1]))
+            reward = float(child.reward[0])/float(child.reward[1]) + c*sqrt( 2*log(len(state.children))/float(child.reward[1]))
             rewards.append(reward) 
         return state.children[np.argmax(rewards)]
 
